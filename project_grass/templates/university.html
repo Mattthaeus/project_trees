@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ university.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ university.name }}</h1>
+    <p>Location: {{ university.location }}</p>
+    <p>Tuition fee: {{ university.tuition_fee }}</p>
+    <p>Language requirement: {{ university.language_requirement }}</p>
+    <p>Faculty: {{ university.faculty }}</p>
+    <a href="/">Back to university list</a>
+</body>
+</html>

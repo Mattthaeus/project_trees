@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFinder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>UniFinder - the best scouting app to find a university of your dream</h1>
+    <h3>Choose a university:</h3>
+    <a href="/creator">Create a university</a>
+    <ul>
+        {% for university in universities %}
+            <li>
+                <a href="/university/{{ university.id }}">{{ university.name }}</a>
+                <a href="/editor/{{ university.id }}">edit</a>
+                <a href="/delete/{{ university.id }}">delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

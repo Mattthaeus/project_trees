@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{ university.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>University editor</h1>
+    <form action="/edit/{{ university.id }}" method="post">
+        <label for="name">University name:</label>
+        <input name="name" type="text" value="{{ university.name }}"><br>
+
+        <label for="location">University location:</label>
+        <input name="location" type="text" value="{{ university.location }}"><br>
+
+        <label for="tuition_fee">Tuition fee:</label>
+        <input name="tuition_fee" type="number" value="{{ university.tuition_fee }}"><br>
+
+        <label for="language_requirement">Language requirement:</label>
+        <input name="language_requirement" type="text" value="{{ university.language_requirement }}"><br>
+
+        <label for="faculty">Faculty:</label>
+        <input name="faculty" type="text" value="{{ university.faculty }}"><br>
+
+        <button type="submit">Edit</button>
+    </form>
+</body>
+</html>

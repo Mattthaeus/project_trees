@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University creator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>University creator</h1>
+    <form action="/create" method="post">
+        <label for="name">University name:</label>
+        <input name="name" type="text"><br>
+
+        <label for="location">University location:</label>
+        <input name="location" type="text"><br>
+
+        <label for="tuition_fee">Tuition fee:</label>
+        <input name="tuition_fee" type="number"><br>
+
+        <label for="language_requirement">Language requirement:</label>
+        <input name="language_requirement" type="text"><br>
+
+        <label for="faculty">Faculty:</label>
+        <input name="faculty" type="text"><br>
+
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
