@@ -140,6 +140,10 @@ def logout():
     logout_user()
     return redirect(url_for("home"))
 
+@app.route("/")
+def home():
+    return "Hello, this is the home page!"
+
 
 if __name__ == "__main__":
     app.run(debug=True)

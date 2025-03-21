@@ -19,9 +19,7 @@ class University(db.Model):
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
-    password = db.Column(
-        db.String(256), nullable=False
-    )  # Тут має бути хеш пароля
-
+    password = db.Column(db.String(256), nullable=False)  # Тут має бути хеш пароля
+    is_admin = db.Column(db.Boolean, default=False)  # 🔥 Флаг админа
     def __repr__(self):
         return f"<User {self.username}>"
