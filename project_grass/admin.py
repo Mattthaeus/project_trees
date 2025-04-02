@@ -6,10 +6,14 @@ from flask_admin.form import FileUploadField, Select2Widget
 from flask_admin.menu import MenuLink
 from flask_login import current_user
 from wtforms_sqlalchemy.fields import QuerySelectField
-from app import university
+#from app import university
+def get_university():
+    from app import university
+    return university
 
 from config import Config
 from models import User, db
+from models import University
 
 
 # Кастомна головна сторінка адмінки
@@ -78,5 +82,5 @@ admin = Admin(
 admin.add_link(MenuLink(name=" Перейти до переліку унівеситетів", url="/"))
 admin.add_link(MenuLink(name=" Вийти", url="/logout"))
 # Додаємо моделі в адмінку
-admin.add_view(CategoryAdmin(university, db.session, name="Категорії"))
+admin.add_view(CategoryAdmin(University, db.session, name="Категорії"))
 admin.add_view(UserAdmin(User, db.session, name="Користувачі"))
